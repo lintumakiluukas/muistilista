@@ -1,0 +1,33 @@
+Tunnukset
+Attribuutti|      Arvojoukko       | Kuvailu
+-----------+-----------------------+-----------
+ username  | Merkkijono, max 32    |Käyttäjätunnus
+ password  | Merkkijono, max 32    |Salasana
+
+
+
+
+Muistilista
+   Attribuutti    |      Arvojoukko       | Kuvailu
+------------------+-----------------------+-----------
+ username         | Merkkijono, max 32    |Muistilistan tekijän käyttäjätunnus
+ muistilistannimi | Merkkijono, max 32    |Muistilistan nimi
+ muistilistaid    | kokonaisluku          |Numero, joka erottaa samannimiset muistilistat toisistaan
+
+
+
+Askare
+   Attribuutti     |      Arvojoukko       | Kuvailu
+-------------------+-----------------------+-----------
+ muistilistaid     | kokonaisluku          |Muistilistan ID
+ askareid          | kokonaisluku          |Numero, joka erottaa samannimiset askareet toisistaan
+ askareennimi      | Merkkijono, max 32    |Askareen nimi/kuvaus
+ tarkeysaste       | kokonaisluku          |Tärkeysaste numeroituna 1-5
+ tarkeysasteennimi | Merkkijono, max 32    |Tärkeysasteen nimi
+
+
+Tärkeysaste
+    Attribuutti    |      Arvojoukko       | Kuvailu
+-------------------+-----------------------+-----------
+ tarkeysasteennimi | Merkkijono, max 32    |Tärkeysasteen nimi
+ tarkeysaste       | kokonaisluku          |Tärkeysaste numeroituna 1-5

@@ -1,0 +1,59 @@
+index.html
+	Aloitussivu, jossa käyttäjä voi kirjautua palveluun tai rekisteröidä uuden tunnuksen.
+		
+register.html
+	Rekisteröitymissivu, johon käyttäjä syöttää haluamansa käyttäjänimen ja salasanan
+
+register.php
+	Luo uuden käyttäjäntunnuksen tietokantaan. Antaa virheilmoituksen, jos käyttäjänimi on jo varattu, tai salasanat eivät täsmää.
+	
+laheta.php
+	käsittelee kirjautumisen ja ohjaa käyttäjän eteenpäin
+	
+menu.php
+	luo navigointivalikon. Sisällytetään muihin sivuihin include -komennolla
+	
+mylists.php
+	hakee tietokannasta kaikki kirjautuneen käyttäjän omistamat muistilistat, sivulla mahdollisuus tarkastella ja luoda uusia muistilistoja
+	
+newlist.html
+	lomake, johon käyttäjä syöttää nimen uudelle muistilistalle
+	
+newlist.php
+	luo uuden muistilistan tietokantaan käyttäjän syöttämällä nimellä ja määrittää sille ID:n
+	
+viewlist.php
+	näyttää käyttäjän valitseman muistilistan askareet. Mahdollisuus poistaa, muokata, järjestää ja lisätä askareita, sekä muokata muistilistaa.
+
+addaskare.php
+	lisää uuden käyttäjän määrittelemän askareen tietokantaan
+
+edit.php
+	Suorittaa salasanan vaihtamisen, muistilistan nimen vaihtamisen ja askareen nimen ja tärkeysasteen muokkaamisen
+
+editaskare.php
+	sivu, johon käyttäjä syöttää uudet tiedot muokattavaan askareeseen
+
+editlist.php
+	sivu, jolla käyttäjä voi muokata muistilistan nimeä tai poistaa muistilistan.
+
+logout.html
+	varmistaa uloskirjautumisen
+
+logout.php
+	suorittaa uloskirjautumisen, eli lopettaa session
+
+rmsaskare.php
+	poistaa käyttäjän valitseman askareen
+
+rmlista.php
+	poistaa käyttäjän valitseman muistilistan
+
+settings.php
+	sivu, jolla käyttäjä voi vaihtaa salasanan
+
+tyyli.css
+	css tyylisivu
+	
+yhteys.php
+	avaa yhteyden tietokantaan

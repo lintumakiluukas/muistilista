@@ -1,6 +1,7 @@
 
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <style>
 .center
 {
@@ -15,33 +16,33 @@ background-color:#CCCCFF;
 
 <?php
 $user=$_POST["username"];
-// yhteyden muodostus tietokantaan
-try {
-    $yhteys = new PDO("pgsql:host=localhost;dbname=lulululu",
-                      "lulululu", "0571d57307ed8491");
-} catch (PDOException $e) {
-    die("VIRHE: " . $e->getMessage());
-}
-$yhteys->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pass=$_POST["password"];
+ include 'yhteys.php';
+$kysely = $yhteys->prepare("SELECT password FROM tunnukset WHERE username = ?"); 
+$kysely->execute(array($user));
 
-// kyselyn suoritus     
-$kysely = $yhteys->prepare("SELECT password FROM tunnukset WHERE username='$user'");
-$kysely->execute();
 
 $rivi = $kysely->fetch();
 if ($_POST["password"]==$rivi["password"] && $_POST["password"]!=null)
 {
+include 'menu.php';
+session_start();
+$_SESSION['user']=$user;
+$_SESSION['pass']=$pass;
+echo $_SESSION['user'];
+echo ":D";
+header("location:mylists.php");
 ?>
-<p div class="center">hey yo yo yo welcome!</p>
+
 
 <?php
 }else{
 ?>
 
-<p div class="center">Virheellinen käyttäjätunnus tai salasana</p>
+<p div class="center">Virheellinen k&#228;ytt&#228;j&#228;tunnus tai salasana</p>
 
 <br>
-<a  div class="center" href="index.html">Yritä uudestaan</a><br>
+<a  div class="center" href="index.html">Yrit&#228; uudestaan</a><br>
 <a div class="center" href="recoverpassword.html">Unohtuiko salasana?</a><br>
 <a div class="center" href="register.html">Rekisteröidy</a>
 <?php
